@@ -2,7 +2,7 @@
 
 
  <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="info.kyorohiro.tinybeacon"
+    id="info.kyorohiro.hello"
     version="0.0.1">
     <name>TinyHello Plugin</name>
     <description>xxx</description>
@@ -17,7 +17,7 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="TinyBeacon">
+            <feature name="Hello">
                 <param name="android-package" value="info.kyorohiro.hello.TinyCordovaPlugin"/>
             </feature>
         </config-file>
@@ -32,13 +32,6 @@
 
         <source-file src="src/android/TinyCordovaPlugin.java" target-dir="src/info/kyorohiro/hello" />
 
-        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
-            <string>This app would like to scan iBeacons in the background.</string>
-        </config-file>
-
-        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-            <string>This app would like to scan iBeacons.</string>
-        </config-file>
     </platform>
 
 
