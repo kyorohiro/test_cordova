@@ -1,0 +1,45 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+
+
+ <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="info.kyorohiro.tinybeacon"
+    version="0.0.1">
+    <name>TinyHello Plugin</name>
+    <description>xxx</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,hello</keywords>
+    <repo>https://github.com/kyorohiro/test_cordova.git</repo>
+
+    <!--js-module src="www/tinybeacon.js" name="TinyBeacon">
+      <merges target="cordova.plugins"/>
+    </js-module-->
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="TinyBeacon">
+                <param name="android-package" value="info.kyorohiro.hello.TinyCordovaPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+          <uses-permission android:name="android.permission.BLUETOOTH" />
+          <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+          <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+          <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+
+        <source-file src="src/android/TinyCordovaPlugin.java" target-dir="src/info/kyorohiro/hello" />
+
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+            <string>This app would like to scan iBeacons in the background.</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string>This app would like to scan iBeacons.</string>
+        </config-file>
+    </platform>
+
+
+</plugin>
