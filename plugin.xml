@@ -13,7 +13,7 @@
     <!--js-module src="www/tinybeacon.js" name="TinyBeacon">
       <merges target="cordova.plugins"/>
     </js-module-->
-
+    <preference name="URL_SCHEME" />
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -30,6 +30,14 @@
           <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         </config-file>
 
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+          <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="$URL_SCHEME"/>
+          </intent-filter>
+        </config-file>
         <source-file src="src/android/TinyCordovaPlugin.java" target-dir="src/info/kyorohiro/hello" />
 
     </platform>
