@@ -1,3 +1,3 @@
 # test_cordova
 
-<a href="mycoolapp://xxx/yyy">mycoolapp://xxx/yyy</a>
+<a href="test.abc.test://xxx/yyy">mycoolapp://xxx/yyy</a>
